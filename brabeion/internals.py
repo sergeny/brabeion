@@ -1,7 +1,4 @@
-from django.contrib.auth.models import User
-
-from brabeion.base import Badge
-
+#from brabeion.base import Badge
 
 
 class BadgeCache(object):
@@ -19,7 +16,7 @@ class BadgeCache(object):
     def register(self, badge):
         # We should probably duck-type this, but for now it's a decent sanity
         # check.
-        assert issubclass(badge, Badge)
+#        assert issubclass(badge, Badge)
         badge = badge()
         self._registry[badge.slug] = badge
         for event in badge.events:
